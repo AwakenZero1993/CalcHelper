@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Assist Tool</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <nav class="top-nav">
+            <a href="index.html" class="back-button">
+                <i class="fas fa-home"></i>
+                <span>🏠 Trang chủ</span>
+            </a>
+        </nav>
+        
+        <header>
+            <h1><i class="fas fa-user-cog"></i> Profile Assist Tool</h1>
+        </header>
+        <main>
+            <form id="calculator-form" class="card">
+                <div class="form-group">
+                    <label for="total">Base Stat:</label>
+                    <input type="number" id="total" name="total" required min="0" aria-label="Base Stat">
+                </div>
+
+                <div id="stat-summary" class="card">
+                    <div class="stat-item right-align">
+                        <span>Remaining:</span>
+                        <span id="remaining-total" class="highlight"></span>
+                    </div>
+                </div>
+
+                <div id="stat-inputs">
+                    <div class="form-group">
+                        <label for="hp">HP:</label>
+                        <input type="number" id="hp" name="hp" required min="0" aria-label="HP">
+                        <span id="hp-error" class="error-message"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="power">Power:</label>
+                        <input type="number" id="power" name="power" min="0" aria-label="Power">
+                        <span id="power-error" class="error-message"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="speed">Speed:</label>
+                        <input type="number" id="speed" name="speed" min="0" aria-label="Speed">
+                        <span id="speed-error" class="error-message"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="shielding">Shielding (SHD):</label>
+                        <input type="number" id="shielding" name="shielding" min="0" aria-label="Shielding">
+                        <span id="shielding-error" class="error-message"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="recovery">Recovery (REC):</label>
+                        <input type="number" id="recovery" name="recovery" min="0" aria-label="Recovery">
+                        <span id="recovery-error" class="error-message"></span>
+                    </div>
+
+                    <span id="total-error" class="error-message"></span>
+                </div>
+            </form>
+
+            <div id="input-values" class="card">
+                <h2>Profile Summary</h2>
+                <p>Base stat: <span id="input-total" class="highlight"></span></p>
+                <p>HP: <span id="input-hp" class="highlight"></span></p>
+                <p>Pow: <span id="input-power" class="highlight"></span></p>
+                <p>Spd: <span id="input-speed" class="highlight"></span></p>
+                <p>Shd: <span id="input-shielding" class="highlight"></span></p>
+                <p>Rec: <span id="input-recovery" class="highlight"></span></p>
+            </div>
+
+            <button id="copy-values" class="btn-primary"><i class="fas fa-copy"></i> Copy Profile</button>
+            <div id="success-message"></div>
+        </main>
+        
+        <footer>
+            <p>&copy; 2024 Profile Assist Tool. All rights reserved.</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

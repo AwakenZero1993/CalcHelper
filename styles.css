@@ -1,0 +1,311 @@
+/* Reset và styles chung */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2 {
+    margin-bottom: 20px;
+    color: #1a73e8;
+}
+
+/* Header và footer */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    color: #5f6368;
+}
+
+/* Tool menu (trang chủ) */
+.tool-menu {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.tool-item {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 30px;
+    width: 300px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.tool-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.tool-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.tool-icon {
+    font-size: 3rem;
+    color: #1a73e8;
+    margin-bottom: 20px;
+}
+
+.tool-item h2 {
+    color: #1a73e8;
+    margin-bottom: 10px;
+}
+
+.tool-item p {
+    color: #5f6368;
+}
+
+/* Styles cho bản đồ */
+.map-section {
+    margin-bottom: 30px;
+    width: 100%;
+    padding-top: 100%; /* Tạo tỷ lệ 1:1 */
+    position: relative;
+}
+
+#mapCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+}
+
+/* Layout cho phần điều khiển */
+.control-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.input-card, .card {
+    flex: 1;
+    min-width: 300px;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+/* Styles cho form */
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #34495e;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.btn-primary,
+.btn-secondary {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.btn-primary {
+    background-color: #1a73e8;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #1557b0;
+}
+
+.btn-secondary {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #c0392b;
+}
+
+/* Styles cho danh sách điểm */
+#pointList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#pointList li {
+    padding: 10px;
+    background-color: #ecf0f1;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#pointList li:hover {
+    background-color: #d5dbdb;
+}
+
+/* Styles cho kết quả AoE và khoảng cách */
+#aoeResult, #distanceResult {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #ecf0f1;
+    border-radius: 4px;
+}
+
+.friendly-fire-alert, .enemy-buff-alert {
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 4px;
+    font-weight: bold;
+    animation: blink 1s infinite;
+}
+
+.friendly-fire-alert {
+    background-color: #ffcccc;
+    border: 2px solid #ff0000;
+    color: #ff0000;
+}
+
+.enemy-buff-alert {
+    background-color: #fff3cd;
+    border: 2px solid #ffeeba;
+    color: #856404;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+/* Nút quay về trang chủ */
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    background-color: #1a73e8;
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: #1557b0;
+}
+
+.back-button i {
+    margin-right: 8px;
+}
+
+/* Styles cho Profile Assist Tool */
+#stat-summary {
+    margin-bottom: 20px;
+}
+
+.highlight {
+    color: #1a73e8;
+    font-weight: bold;
+}
+
+.error-message {
+    color: #d32f2f;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .control-section {
+        flex-direction: column;
+    }
+
+    .input-card, .tool-item {
+        width: 100%;
+    }
+
+    input[type="number"] {
+        width: 100%;
+    }
+}
+
+.map-layout {
+    display: flex;
+    gap: 20px;
+}
+
+.column {
+    flex: 1;
+}
+
+.form-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.form-row button {
+    flex: 1;
+}
+
+@media (max-width: 768px) {
+    .map-layout {
+        flex-direction: column;
+    }
+
+    .form-row {
+        flex-direction: column;
+    }
+}

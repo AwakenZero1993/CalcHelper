@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Công cụ tính toán sát thương</title>
+    <link rel="stylesheet" href="damage-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <nav class="top-nav">
+            <a href="index.html" class="back-button">
+                <i class="fas fa-home"></i>
+                <span>🏠 Trang chủ</span>
+            </a>
+        </nav>
+        
+        <header>
+            <h1><i class="fas fa-calculator"></i> Công cụ tính toán sát thương</h1>
+        </header>
+        <main>
+            <div class="section">
+                <h2 class="section-title" onclick="toggleSection('stat-calc')">
+                    <i class="fas fa-chart-bar"></i> 1. Hỗ trợ tính toán stat
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </h2>
+                <div id="stat-calc" class="section-content card" style="display: none;">
+                    <form id="stat-calc-form">
+                        <div class="form-group">
+                            <label for="base-stat">Base Stat:</label>
+                            <input type="number" id="base-stat" required placeholder="Nhập chỉ số cơ bản">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="buff-count">Số lượng buff chỉ số bạn đang có:</label>
+                            <input type="number" id="buff-count" value="0" min="0" placeholder="Nhập số lượng buff">
+                        </div>
+                        
+                        <div id="buff-inputs"></div>
+                        
+                        <div class="form-group">
+                            <label for="debuff-count">Số lượng debuff chỉ số bạn đang có:</label>
+                            <input type="number" id="debuff-count" value="0" min="0" placeholder="Nhập số lượng debuff">
+                        </div>
+                        
+                        <div id="debuff-inputs"></div>
+                    </form>
+                    <div id="stat-calc-result" class="result-box"></div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title" onclick="toggleSection('damage-dealt')">
+                    <i class="fas fa-fist-raised"></i> 2. Hỗ trợ tính sát thương gây ra
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </h2>
+                <div id="damage-dealt" class="section-content card" style="display: none;">
+                    <form id="damage-dealt-form">
+                        <div class="form-group">
+                            <label for="attack-count">Số lượng đòn tấn công:</label>
+                            <input type="number" id="attack-count" min="1" value="1" required>
+                        </div>
+                        
+                        <div id="attacks-container"></div>
+                    </form>
+                    <div id="damage-dealt-result" class="result-box"></div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title" onclick="toggleSection('damage-received')">
+                    <i class="fas fa-shield-alt"></i> 3. Hỗ trợ tính sát thương nhận vào
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </h2>
+                <div id="damage-received" class="section-content card" style="display: none;">
+                    <form id="damage-received-form">
+                        <!-- Nội dung form sẽ được tạo động bởi JavaScript -->
+                    </form>
+                    <div id="damage-received-result" class="result-box"></div>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>&copy; 2024 Công cụ tính toán sát thương. All rights reserved.</p>
+        </footer>
+    </div>
+    <script src="damage-script.js"></script>
+    <script src="damage-received-script.js"></script>
+</body>
+</html>
